@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Student Registration Form</title>
+  <title>Student Registration</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom right, #dbeafe, #f0f9ff);
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e0f2f1;
       margin: 0;
-      padding: 20px;
+      padding: 40px 20px;
     }
 
-    .container {
-      max-width: 800px;
+    .form-card {
+      max-width: 900px;
+      background: #fff;
       margin: auto;
-      background-color: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 40px 30px;
     }
 
     .logo {
@@ -27,21 +27,21 @@
     }
 
     .logo img {
-      max-width: 120px;
+      max-width: 100px;
     }
 
     h2 {
       text-align: center;
-      margin-bottom: 30px;
-      color: #1e3a8a;
+      margin-bottom: 10px;
+      color: #2c3e50;
     }
 
     h3 {
-      grid-column: span 2;
-      color: #374151;
-      margin-top: 30px;
-      border-top: 1px solid #ccc;
-      padding-top: 20px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      color: #00796b;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 8px;
     }
 
     form {
@@ -55,13 +55,14 @@
       flex-direction: column;
     }
 
-    label {
-      margin-bottom: 5px;
-      font-weight: bold;
+    .form-group label {
+      font-weight: 600;
+      margin-bottom: 6px;
       color: #333;
     }
 
-    input, select {
+    .form-group input,
+    .form-group select {
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 6px;
@@ -74,49 +75,51 @@
 
     button {
       grid-column: span 2;
-      padding: 14px;
-      background-color: #2563eb;
+      background-color: #00796b;
       color: white;
-      font-size: 16px;
       border: none;
-      border-radius: 6px;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 8px;
       cursor: pointer;
+      margin-top: 20px;
     }
 
     button:hover {
-      background-color: #1d4ed8;
+      background-color: #00695c;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       form {
         grid-template-columns: 1fr;
       }
 
-      .full-width, h3, button {
+      .full-width,
+      button {
         grid-column: span 1;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="form-card">
     <div class="logo">
       <img src="logo.png" alt="School Logo" />
     </div>
 
-    <h2>Student Registration Form</h2>
+    <h2>Student Registration</h2>
 
+    <!-- STUDENT SECTION -->
+    <h3>Student Information</h3>
     <form action="#" method="post">
-
-      <!-- Student Details -->
       <div class="form-group">
-        <label for="name">Student Full Name</label>
-        <input type="text" id="name" name="name" required />
+        <label for="student_name">Full Name</label>
+        <input type="text" id="student_name" name="student_name" required />
       </div>
 
       <div class="form-group">
-        <label for="email">Student Email</label>
-        <input type="email" id="email" name="email" required />
+        <label for="student_email">Email</label>
+        <input type="email" id="student_email" name="student_email" required />
       </div>
 
       <div class="form-group">
@@ -125,8 +128,8 @@
       </div>
 
       <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" required />
+        <label for="student_phone">Phone Number</label>
+        <input type="tel" id="student_phone" name="student_phone" required />
       </div>
 
       <div class="form-group">
@@ -144,8 +147,8 @@
         <select id="course" name="course" required>
           <option value="">--Select--</option>
           <option value="cs">Computer Science</option>
-          <option value="business">Business Admin</option>
-          <option value="design">Graphic Design</option>
+          <option value="business">Business</option>
+          <option value="design">Design</option>
           <option value="eng">Engineering</option>
         </select>
       </div>
@@ -155,7 +158,7 @@
         <input type="text" id="address" name="address" />
       </div>
 
-      <!-- Parent Details Header -->
+      <!-- PARENT SECTION -->
       <h3>Parent/Guardian Information</h3>
 
       <div class="form-group">
@@ -165,7 +168,7 @@
 
       <div class="form-group">
         <label for="relationship">Relationship</label>
-        <input type="text" id="relationship" name="relationship" placeholder="E.g., Father, Mother, Guardian" required />
+        <input type="text" id="relationship" name="relationship" placeholder="e.g., Father, Mother, Guardian" required />
       </div>
 
       <div class="form-group">
@@ -174,7 +177,7 @@
       </div>
 
       <div class="form-group">
-        <label for="parent_email">Email Address</label>
+        <label for="parent_email">Email</label>
         <input type="email" id="parent_email" name="parent_email" />
       </div>
 
